@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Routes, RouterModule } from "@angular/router";
+import { DevExtremeModule } from "../../dev-extreme.module";
 import { FirmaEkleComponent } from "./firma-ekle/firma-ekle.component";
 import { FirmaListesiComponent } from "./firma-listesi/firma-listesi.component";
 import { FirmaKullaniciEkleComponent } from "./firma-kullanici-ekle/firma-kullanici-ekle.component";
@@ -33,7 +34,7 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, DevExtremeModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
   declarations: [
     FirmaEkleComponent,

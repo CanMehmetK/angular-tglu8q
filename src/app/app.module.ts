@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule } from "@angular/forms";
 
 import { MaterialModule } from "./material.module";
+
 import { AppComponent } from "./app.component";
 
 const routes: Routes = [
