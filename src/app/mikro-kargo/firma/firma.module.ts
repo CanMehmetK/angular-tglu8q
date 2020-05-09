@@ -33,14 +33,13 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
   declarations: [
     FirmaEkleComponent,
     FirmaListesiComponent,
     FirmaKullaniciEkleComponent,
-    FirmaKullaniciListesiComponent,
-    DashboardComponent
+    FirmaKullaniciListesiComponent
   ]
 })
 export class FirmaModule {}
