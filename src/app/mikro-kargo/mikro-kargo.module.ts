@@ -5,7 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { MaterialModule } from "../material.module";
 
-import { LayoutComponent } from "./layout/layout.component";
+import { LayoutComponent } from "./layout.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 const COMPONENTS = [LayoutComponent, DashboardComponent];
 
