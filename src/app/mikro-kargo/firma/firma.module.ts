@@ -5,7 +5,7 @@ import { FirmaEkleComponent } from "./firma-ekle/firma-ekle.component";
 import { FirmaListesiComponent } from "./firma-listesi/firma-listesi.component";
 import { FirmaKullaniciEkleComponent } from "./firma-kullanici-ekle/firma-kullanici-ekle.component";
 import { FirmaKullaniciListesiComponent } from "./firma-kullanici-listesi/firma-kullanici-listesi.component";
-import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 const routes: Routes = [
   { path: "", redirectTo: "listesi", pathMatch: "full" },
