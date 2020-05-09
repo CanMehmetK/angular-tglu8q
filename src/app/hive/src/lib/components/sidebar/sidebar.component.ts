@@ -22,7 +22,7 @@ import { MediaObserver } from "@angular/flex-layout";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
-import { HiveSidebarService } from "/Aprojects/hive/src/lib/services/sidebar.service";
+import { HiveSidebarService } from "projects/hive/src/lib/services/sidebar.service";
 import { HiveConfigService } from "projects/hive/src/lib/services/config.service";
 import { IHiveConfig } from "projects/hive/src/lib/types";
 import { MatchMediaService } from "projects/hive/src/lib/services";
