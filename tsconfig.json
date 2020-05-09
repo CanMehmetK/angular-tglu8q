@@ -22,10 +22,14 @@
     "paths": {
       "jszip": [
         "../node_modules/jszip/dist/jszip.js"
-      ]
+      ],
+      "projects": ["app/"],
+      "projects/*": ["app/*"]
     }
   },
   "angularCompilerOptions": {
-    "enableIvy": false
+    "enableIvy": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }
