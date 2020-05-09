@@ -22,7 +22,7 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    ,
+
     MaterialModule,
     RouterModule.forRoot(routes)
   ],
