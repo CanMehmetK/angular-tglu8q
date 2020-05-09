@@ -23,8 +23,8 @@
       "jszip": [
         "../node_modules/jszip/dist/jszip.js"
       ],
-      "projects": ["src/app/"],
-      "projects/*": ["src/app/*"]
+      "projects": ["./src/app/"],
+      "projects/*": ["./src/app/*"]
 
     }
   },
