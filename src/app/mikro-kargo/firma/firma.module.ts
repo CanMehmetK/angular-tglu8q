@@ -3,6 +3,11 @@ import { CommonModule } from "@angular/common";
 import { Routes, RouterModule } from "@angular/router";
 import { MaterialModule } from "../../material.module";
 import { DevExtremeModule } from "../../dev-extreme.module";
+
+import { HiveModule } from "projects/hive/src/lib/hive.module";
+
+import { FormsModule } from "@angular/forms";
+
 import { FirmaEkleComponent } from "./firma-ekle/firma-ekle.component";
 import { FirmaListesiComponent } from "./firma-listesi/firma-listesi.component";
 import { FirmaKullaniciEkleComponent } from "./firma-kullanici-ekle/firma-kullanici-ekle.component";

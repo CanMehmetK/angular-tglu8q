@@ -6,3 +6,15 @@
   right: 0;
   mat-drawer{min-width: 280px;}
 }
+
+// Genel Css -----------------
+.hive-component {
+  .hive-page-header {
+    margin : 0 0 10px !important;
+  }
+
+  > mat-card {
+    margin  : 0 10px;
+    padding : 10px !important;
+  }
+}

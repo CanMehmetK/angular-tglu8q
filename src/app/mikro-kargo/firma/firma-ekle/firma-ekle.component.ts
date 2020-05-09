@@ -6,7 +6,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./firma-ekle.component.css"]
 })
 export class FirmaEkleComponent implements OnInit {
+  firma: IMikroKargoFirma = { TicariUnvan: "adsasdad" };
+
   constructor() {}
 
   ngOnInit() {}
+}
+
+class IMikroKargoFirma {
+  TicariUnvan: string;
 }

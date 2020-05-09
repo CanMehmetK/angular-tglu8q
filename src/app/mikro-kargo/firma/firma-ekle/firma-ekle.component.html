@@ -1,3 +1,32 @@
-<p>
-firma-ekle works!
-</p>
+<div class="hive-component">
+    <hive-page-header [title]="'Firma Ekle'" [showBreadCrumb]="true"></hive-page-header>
+    <mat-card>
+        <mat-horizontal-stepper [linear]="true">
+            <mat-step label="Firma Bilgileri" state="firma">
+                <mat-form-field>
+                    <input matInput [(ngModel)]="firma.TicariUnvan" name="scenarioName" #scenarioName="ngModel"
+                           placeholder="Scenario name" class="form-control" required minlength="3" />
+                    <mat-error [hidden]="scenarioName.valid">Scenario name should have at least 3 symbols
+                    </mat-error>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperNext>Sonraki</button>
+                </div>
+            </mat-step>
+            <mat-step label="Firma Adres Bilgileri" state="adres">
+                <p>Socialize with each other.</p>
+                <div>
+                    <button mat-button matStepperPrevious>Önceki</button>
+                    <button mat-button matStepperNext>Sonraki</button>
+                </div>
+            </mat-step>
+            <mat-step label="Fiyat Tanımlama" state="fiyat">
+                <p>You're welcome.</p>
+            </mat-step>
+            <mat-step label="Sözleşme Ekle" state="sozlesme">
+                <p>You're welcome.</p>
+            </mat-step>
+        </mat-horizontal-stepper>
+        {{ firma | json }}
+    </mat-card>
+</div>
