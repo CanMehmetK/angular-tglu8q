@@ -2,11 +2,17 @@ import { NgModule } from "@angular/core";
 
 import {
   DxDataGridModule,
+  DxTemplateModule,
   DxTreeListModule,
   DxHtmlEditorModule
 } from "devextreme-angular";
 
 @NgModule({
-  exports: [DxDataGridModule, DxTreeListModule, DxHtmlEditorModule]
+  exports: [
+    DxDataGridModule,
+    DxTemplateModule,
+    DxTreeListModule,
+    DxHtmlEditorModule
+  ]
 })
 export class DevExtremeModule {}
