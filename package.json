@@ -34,6 +34,7 @@
     "core-js": "^3.6.4",
     "devextreme": "19.2.6",
     "devextreme-angular": "19.2.6",
+    "helmsman": "^2.0.1",
     "moment": "^2.25.3",
     "ng-apexcharts": "^1.2.3",
     "ng-material-multilevel-menu": "^4.12.2",

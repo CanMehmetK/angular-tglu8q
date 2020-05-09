@@ -10,28 +10,28 @@ import {
   OnInit,
   Output,
   Renderer2,
-  ViewEncapsulation,
-} from '@angular/core';
+  ViewEncapsulation
+} from "@angular/core";
 import {
   animate,
   AnimationBuilder,
   AnimationPlayer,
-  style,
-} from '@angular/animations';
-import { MediaObserver } from '@angular/flex-layout';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+  style
+} from "@angular/animations";
+import { MediaObserver } from "@angular/flex-layout";
+import { Subject } from "rxjs";
+import { takeUntil } from "rxjs/operators";
 
-import { HiveSidebarService } from 'projects/hive/src/lib/services/sidebar.service';
-import { HiveConfigService } from 'projects/hive/src/lib/services/config.service';
-import { IHiveConfig } from 'projects/hive/src/lib/types';
-import { MatchMediaService } from 'projects/hive/src/lib/services';
+import { HiveSidebarService } from "/Aprojects/hive/src/lib/services/sidebar.service";
+import { HiveConfigService } from "projects/hive/src/lib/services/config.service";
+import { IHiveConfig } from "projects/hive/src/lib/types";
+import { MatchMediaService } from "projects/hive/src/lib/services";
 
 @Component({
-  selector: 'hive-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  selector: "hive-sidebar",
+  templateUrl: "./sidebar.component.html",
+  styleUrls: ["./sidebar.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class HiveSidebarComponent implements OnInit, OnDestroy {
   // Name
@@ -44,10 +44,10 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
 
   // Position
   @Input()
-  position: 'left' | 'right';
+  position: "left" | "right";
 
   // Open
-  @HostBinding('class.open')
+  @HostBinding("class.open")
   opened: boolean;
 
   // Locked Open
@@ -55,7 +55,7 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
   lockedOpen: string;
 
   // isLockedOpen
-  @HostBinding('class.locked-open')
+  @HostBinding("class.locked-open")
   isLockedOpen: boolean;
 
   // Folded width
@@ -67,7 +67,7 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
   foldedAutoTriggerOnHover: boolean;
 
   // Folded unfolded
-  @HostBinding('class.unfolded')
+  @HostBinding("class.unfolded")
   unfolded: boolean;
 
   // Invisible overlay
@@ -91,7 +91,7 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
   private _player: AnimationPlayer;
   private _unsubscribeAll: Subject<any>;
 
-  @HostBinding('class.animations-enabled')
+  @HostBinding("class.animations-enabled")
   private _animationsEnabled: boolean;
 
   constructor(
@@ -110,7 +110,7 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     this.foldedChanged = new EventEmitter();
     this.openedChanged = new EventEmitter();
     this.opened = false;
-    this.position = 'left';
+    this.position = "left";
     this.invisibleOverlay = false;
 
     // Set the private defaults
@@ -138,15 +138,15 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     // that comes after or before based on the position
     let sibling, styleRule;
 
-    const styleValue = this.foldedWidth + 'px';
+    const styleValue = this.foldedWidth + "px";
 
     // Get the sibling and set the style rule
-    if (this.position === 'left') {
+    if (this.position === "left") {
       sibling = this._elementRef.nativeElement.nextElementSibling;
-      styleRule = 'padding-left';
+      styleRule = "padding-left";
     } else {
       sibling = this._elementRef.nativeElement.previousElementSibling;
-      styleRule = 'padding-right';
+      styleRule = "padding-right";
     }
 
     // If there is no sibling, return...
@@ -162,23 +162,23 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
       // Set the folded width
       this._renderer.setStyle(
         this._elementRef.nativeElement,
-        'width',
+        "width",
         styleValue
       );
       this._renderer.setStyle(
         this._elementRef.nativeElement,
-        'min-width',
+        "min-width",
         styleValue
       );
       this._renderer.setStyle(
         this._elementRef.nativeElement,
-        'max-width',
+        "max-width",
         styleValue
       );
 
       // Set the style and class
       this._renderer.setStyle(sibling, styleRule, styleValue);
-      this._renderer.addClass(this._elementRef.nativeElement, 'folded');
+      this._renderer.addClass(this._elementRef.nativeElement, "folded");
     }
     // If unfolded...
     else {
@@ -186,13 +186,13 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
       this.unfold();
 
       // Remove the folded width
-      this._renderer.removeStyle(this._elementRef.nativeElement, 'width');
-      this._renderer.removeStyle(this._elementRef.nativeElement, 'min-width');
-      this._renderer.removeStyle(this._elementRef.nativeElement, 'max-width');
+      this._renderer.removeStyle(this._elementRef.nativeElement, "width");
+      this._renderer.removeStyle(this._elementRef.nativeElement, "min-width");
+      this._renderer.removeStyle(this._elementRef.nativeElement, "max-width");
 
       // Remove the style and class
       this._renderer.removeStyle(sibling, styleRule);
-      this._renderer.removeClass(this._elementRef.nativeElement, 'folded');
+      this._renderer.removeClass(this._elementRef.nativeElement, "folded");
     }
 
     // Emit the 'foldedChanged' event
@@ -254,15 +254,15 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     // Remove the existing box-shadow
     this._renderer.setStyle(
       this._elementRef.nativeElement,
-      'box-shadow',
-      'none'
+      "box-shadow",
+      "none"
     );
 
     // Make the sidebar invisible
     this._renderer.setStyle(
       this._elementRef.nativeElement,
-      'visibility',
-      'hidden'
+      "visibility",
+      "hidden"
     );
   }
 
@@ -274,15 +274,15 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
   private _setupPosition(): void {
     // Add the correct class name to the sidebar
     // element depending on the position attribute
-    if (this.position === 'right') {
+    if (this.position === "right") {
       this._renderer.addClass(
         this._elementRef.nativeElement,
-        'right-positioned'
+        "right-positioned"
       );
     } else {
       this._renderer.addClass(
         this._elementRef.nativeElement,
-        'left-positioned'
+        "left-positioned"
       );
     }
   }
@@ -392,15 +392,15 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     // that comes after or before based on the position
     let sibling, styleRule;
 
-    const styleValue = this.foldedWidth + 'px';
+    const styleValue = this.foldedWidth + "px";
 
     // Get the sibling and set the style rule
-    if (this.position === 'left') {
+    if (this.position === "left") {
       sibling = this._elementRef.nativeElement.nextElementSibling;
-      styleRule = 'padding-left';
+      styleRule = "padding-left";
     } else {
       sibling = this._elementRef.nativeElement.previousElementSibling;
-      styleRule = 'padding-right';
+      styleRule = "padding-right";
     }
 
     // If there is no sibling, return...
@@ -414,23 +414,23 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     // Set the folded width
     this._renderer.setStyle(
       this._elementRef.nativeElement,
-      'width',
+      "width",
       styleValue
     );
     this._renderer.setStyle(
       this._elementRef.nativeElement,
-      'min-width',
+      "min-width",
       styleValue
     );
     this._renderer.setStyle(
       this._elementRef.nativeElement,
-      'max-width',
+      "max-width",
       styleValue
     );
 
     // Set the style and class
     this._renderer.setStyle(sibling, styleRule, styleValue);
-    this._renderer.addClass(this._elementRef.nativeElement, 'folded');
+    this._renderer.addClass(this._elementRef.nativeElement, "folded");
   }
 
   /**
@@ -440,14 +440,14 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
    */
   private _showBackdrop(): void {
     // Create the backdrop element
-    this._backdrop = this._renderer.createElement('div');
+    this._backdrop = this._renderer.createElement("div");
 
     // Add a class to the backdrop element
-    this._backdrop.classList.add('hive-sidebar-overlay');
+    this._backdrop.classList.add("hive-sidebar-overlay");
 
     // Add a class depending on the invisibleOverlay option
     if (this.invisibleOverlay) {
-      this._backdrop.classList.add('hive-sidebar-overlay-invisible');
+      this._backdrop.classList.add("hive-sidebar-overlay-invisible");
     }
 
     // Append the backdrop to the parent of the sidebar
@@ -458,14 +458,14 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
 
     // Create the enter animation and attach it to the player
     this._player = this._animationBuilder
-      .build([animate('300ms ease', style({ opacity: 1 }))])
+      .build([animate("300ms ease", style({ opacity: 1 }))])
       .create(this._backdrop);
 
     // Play the animation
     this._player.play();
 
     // Add an event listener to the overlay
-    this._backdrop.addEventListener('click', () => {
+    this._backdrop.addEventListener("click", () => {
       this.close();
     });
 
@@ -485,7 +485,7 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
 
     // Create the leave animation and attach it to the player
     this._player = this._animationBuilder
-      .build([animate('300ms ease', style({ opacity: 0 }))])
+      .build([animate("300ms ease", style({ opacity: 0 }))])
       .create(this._backdrop);
 
     // Play the animation
@@ -505,18 +505,16 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     this._changeDetectorRef.markForCheck();
   }
 
-
   private _showSidebar(): void {
     // Remove the box-shadow style
-    this._renderer.removeStyle(this._elementRef.nativeElement, 'box-shadow');
+    this._renderer.removeStyle(this._elementRef.nativeElement, "box-shadow");
 
     // Make the sidebar invisible
-    this._renderer.removeStyle(this._elementRef.nativeElement, 'visibility');
+    this._renderer.removeStyle(this._elementRef.nativeElement, "visibility");
 
     // Mark for check
     this._changeDetectorRef.markForCheck();
   }
-
 
   private _hideSidebar(delay = true): void {
     const delayAmount = delay ? 300 : 0;
@@ -526,15 +524,15 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
       // Remove the box-shadow
       this._renderer.setStyle(
         this._elementRef.nativeElement,
-        'box-shadow',
-        'none'
+        "box-shadow",
+        "none"
       );
 
       // Make the sidebar invisible
       this._renderer.setStyle(
         this._elementRef.nativeElement,
-        'visibility',
-        'hidden'
+        "visibility",
+        "hidden"
       );
     }, delayAmount);
 
@@ -620,7 +618,7 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     }
   }
 
-  @HostListener('mouseenter')
+  @HostListener("mouseenter")
   onMouseEnter(): void {
     // Only work if the auto trigger is enabled
     if (!this.foldedAutoTriggerOnHover) {
@@ -630,7 +628,7 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     this.unfoldTemporarily();
   }
 
-  @HostListener('mouseleave')
+  @HostListener("mouseleave")
   onMouseLeave(): void {
     // Only work if the auto trigger is enabled
     if (!this.foldedAutoTriggerOnHover) {
@@ -693,21 +691,21 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     this.unfolded = false;
 
     // Set the folded width
-    const styleValue = this.foldedWidth + 'px';
+    const styleValue = this.foldedWidth + "px";
 
     this._renderer.setStyle(
       this._elementRef.nativeElement,
-      'width',
+      "width",
       styleValue
     );
     this._renderer.setStyle(
       this._elementRef.nativeElement,
-      'min-width',
+      "min-width",
       styleValue
     );
     this._renderer.setStyle(
       this._elementRef.nativeElement,
-      'max-width',
+      "max-width",
       styleValue
     );
 
@@ -728,9 +726,9 @@ export class HiveSidebarComponent implements OnInit, OnDestroy {
     this.unfolded = true;
 
     // Remove the folded width
-    this._renderer.removeStyle(this._elementRef.nativeElement, 'width');
-    this._renderer.removeStyle(this._elementRef.nativeElement, 'min-width');
-    this._renderer.removeStyle(this._elementRef.nativeElement, 'max-width');
+    this._renderer.removeStyle(this._elementRef.nativeElement, "width");
+    this._renderer.removeStyle(this._elementRef.nativeElement, "min-width");
+    this._renderer.removeStyle(this._elementRef.nativeElement, "max-width");
 
     // Mark for check
     this._changeDetectorRef.markForCheck();

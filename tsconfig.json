@@ -22,9 +22,8 @@
     "paths": {
       "jszip": [
         "../node_modules/jszip/dist/jszip.js"
-      ],
-      "projects": ["app/"],
-      "projects/*": ["app/*"]
+      ]
+ 
     }
   },
   "angularCompilerOptions": {
