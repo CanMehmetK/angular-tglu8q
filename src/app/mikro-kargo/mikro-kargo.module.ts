@@ -10,7 +10,6 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 const COMPONENTS = [LayoutComponent, DashboardComponent];
 
 const routes: Routes = [
-  { path: "", redirectTo: "/mikro-kargo/dashboard", pathMatch: "full" },
   {
     path: "",
     component: LayoutComponent,
