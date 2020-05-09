@@ -11,11 +11,9 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts",
-    "src/projects/hive/**/*.ts"
+    "src/polyfills.ts"
   ],
   "include": [
-    "src/**/*.d.ts",
-    "src/**/*"
+    "src/**/*.d.ts"
   ]
 }
