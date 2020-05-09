@@ -3,7 +3,6 @@ import { Routes, RouterModule } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule } from "@angular/forms";
-import { HiveModule} from 'projects/hive/src/lib/hive.module'
 import { MaterialModule } from "./material.module";
 
 import { AppComponent } from "./app.component";
@@ -23,7 +22,7 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HiveModule,
+    ,
     MaterialModule,
     RouterModule.forRoot(routes)
   ],
