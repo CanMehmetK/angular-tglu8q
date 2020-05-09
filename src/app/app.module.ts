@@ -1,14 +1,23 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 
+const routes: Routes = [
+  {
+    path: "",
+    loadChildren: () =>
+      import("./mikro-kargo/mikro-kargo.module").then(m => m.MikroKargoModule),
+    data: { title: "Authentication", titleI18n: "authentication" }
+  }
+];
 @NgModule({
-  imports:      [ BrowserModule,RouterModule, FormsModule ],
-  declarations: [ AppComponent,   ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -12,7 +12,8 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
   declarations: []
 })
 export class MikroKargoModule {}
