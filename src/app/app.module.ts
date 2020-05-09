@@ -8,11 +8,12 @@ import { AppComponent } from "./app.component";
 
 const routes: Routes = [
   {
-    path: "",
+    path: "mikro-kargo",
     loadChildren: () =>
       import("./mikro-kargo/mikro-kargo.module").then(m => m.MikroKargoModule),
     data: { title: "Authentication", titleI18n: "authentication" }
-  }
+  },
+  {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 @NgModule({
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
