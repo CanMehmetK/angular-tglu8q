@@ -44,7 +44,9 @@ const routes: Routes = [
     CommonModule,
     MaterialModule,
     DevExtremeModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    HiveModule
   ],
   exports: [RouterModule],
   declarations: [
