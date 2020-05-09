@@ -4,8 +4,6 @@ import { Routes, RouterModule } from "@angular/router";
 import { MaterialModule } from "../../material.module";
 import { DevExtremeModule } from "../../dev-extreme.module";
 
-import { HiveModule } from "projects/hive/src/lib/hive.module";
-
 import { FormsModule } from "@angular/forms";
 
 import { FirmaEkleComponent } from "./firma-ekle/firma-ekle.component";
@@ -45,8 +43,7 @@ const routes: Routes = [
     MaterialModule,
     DevExtremeModule,
     RouterModule.forChild(routes),
-    FormsModule,
-    HiveModule
+    FormsModule
   ],
   exports: [RouterModule],
   declarations: [

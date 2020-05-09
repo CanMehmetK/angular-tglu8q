@@ -7,7 +7,7 @@ import { FormsModule } from "@angular/forms";
 import { MaterialModule } from "./material.module";
 
 import { AppComponent } from "./app.component";
-import { HiveModule } from "projects/hive/src/lib/hive.module";
+
 const routes: Routes = [
   { path: "", redirectTo: "mikro-kargo", pathMatch: "full" },
   {
