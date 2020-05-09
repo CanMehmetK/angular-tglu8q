@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
-import { HiveModule } from "../hive/src/lib/hive.module";
 import { MaterialModule } from "../material.module";
 
 import { LayoutComponent } from "./layout.component";
@@ -55,12 +54,7 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  imports: [
-    CommonModule,
-    HiveModule,
-    MaterialModule,
-    RouterModule.forChild(routes)
-  ],
+  imports: [CommonModule, MaterialModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
   declarations: [...COMPONENTS]
 })
