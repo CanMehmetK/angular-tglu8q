@@ -1,13 +1,11 @@
 <mat-drawer-container class="container">
-  <mat-drawer mode="side" opened>
-    <div class="menu">
-      <a routerLink="/" routerLinkActive="active">Mikro Kargo</a>
-     <a routerLink="firma" routerLinkActive="active">Firma</a>
-    </div>
-  </mat-drawer>
-  <mat-drawer-content>
-    <router-outlet></router-outlet>
-  </mat-drawer-content>
+	<mat-drawer mode="side" opened>
+		<mat-nav-list>
+			<a mat-list-item routerLink="/" routerLinkActive="active">Mikro Kargo</a>
+			<a mat-list-item routerLink="firma" routerLinkActive="active">Firma</a>
+		</mat-nav-list>
+	</mat-drawer>
+	<mat-drawer-content>
+		<router-outlet></router-outlet>
+	</mat-drawer-content>
 </mat-drawer-container>
-
-		
