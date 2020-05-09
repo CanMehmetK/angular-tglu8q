@@ -63,7 +63,7 @@ const DIRECTIVES = [
 //#endregion
 
 //#region  PIPES ------------------------------------------
-import { KeysPipe } from 'projects/hive/src/lib/pipes/keys.pipe';
+import { KeysPipe } from 'src/app/projects/hive/src/lib/pipes/keys.pipe';
 import { GetByIdPipe } from 'projects/hive/src/lib/pipes/getById.pipe';
 import { HtmlToPlaintextPipe } from './pipes/htmlToPlaintext.pipe';
 import { FilterPipe } from 'projects/hive/src/lib/pipes/filter.pipe';
