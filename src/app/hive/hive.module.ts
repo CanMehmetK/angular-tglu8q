@@ -5,9 +5,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RouteReuseStrategy, RouterModule} from '@angular/router';
 import {RouteReusableStrategy} from './route-reusable-strategy';
 
-import {ErrorHandlerInterceptor} from './http/error-handler.interceptor';
-import {ApiPrefixInterceptor} from './http/api-prefix.interceptor';
-import {DefaultInterceptor} from './http/default.interceptor';
+
 
 import {IHiveConfig} from './types/hive-config';
 import {HIVE_CONFIG} from './services/config.service';
