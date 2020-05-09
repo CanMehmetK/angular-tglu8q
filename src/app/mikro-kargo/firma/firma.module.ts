@@ -6,7 +6,6 @@ import { FirmaListesiComponent } from "./firma-listesi/firma-listesi.component";
 import { FirmaKullaniciEkleComponent } from "./firma-kullanici-ekle/firma-kullanici-ekle.component";
 import { FirmaKullaniciListesiComponent } from "./firma-kullanici-listesi/firma-kullanici-listesi.component";
 
-
 const routes: Routes = [
   { path: "", redirectTo: "listesi", pathMatch: "full" },
   {
