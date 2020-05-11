@@ -7,7 +7,14 @@
                    <mat-label>Ticari Ünvan</mat-label>
                     <input matInput [(ngModel)]="firma.TicariUnvan" name="scenarioName" #scenarioName="ngModel"
                            placeholder="Ticari Ünvan" class="form-control" required minlength="3" />
-                    <mat-error [hidden]="scenarioName.valid">Ünvan en az 3 karakter olmalı
+                    <mat-error [hidden]="scenarioName.valid">sfsfsfÜnvan en az 3 karakter olmalı
+                    </mat-error>
+                </mat-form-field>
+                 <mat-form-field appearance="outline"> 
+                   <mat-label>Ticari Ünvan</mat-label>
+                    <input matInput [(ngModel)]="firma.KisaAdi" name="scenarioName" #scenarioName="ngModel"
+                           placeholder="Ticari Ünvan" class="form-control" required minlength="3" />
+                    <mat-error [hidden]="scenarioName.valid">sfsfsfÜnvan en az 3 karakter olmalı
                     </mat-error>
                 </mat-form-field>
                 <div>
